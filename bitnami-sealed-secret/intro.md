@@ -27,6 +27,8 @@ This tutorial will use [bitnami sealed secret](https://github.com/bitnami-labs/s
 
 ## How it works
 
+![architect](gitops.png "gitops")
+
 1. A controller deployed to cluster
 2. A CLI tool called kubeseal
 3. A customer resource definition (CRD) called SealedSecret
@@ -38,5 +40,3 @@ During encryption, each value in the original Secret is symmetrically encrypted 
 When a SealedSecret custom resource is deployed to the Kubernetes cluster, the controller will pick it up, unseal it using the private key, and create a Secret resource. During decryption, the SealedSecret’s namespace/name is used again as the input parameter. This ensures that the SealedSecret and Secret are strictly tied to the same namespace and name.
 
 The companion CLI tool kubeseal is used for creating a SealedSecret custom resource definition (CRD) from a Secret resource definition using the public key. kubeseal can communicate with the controller through the Kubernetes API server and retrieve the public key needed for encrypting a Secret at runtime. The public key may also be downloaded from the controller and saved locally to be used offline.
-
-![architect](gitops.png "gitops")

@@ -1,5 +1,5 @@
 {
-  "title": "Managing secrets deployment in kubernetes using Sealed Secrets",
+  "title": "Managing secrets deployment in kubernetes using Bitnami Sealed Secrets",
   "description": "Seal Kubernetes Secret with public key",
   "difficulty": "Beginner",
   "time": "30",
