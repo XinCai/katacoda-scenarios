@@ -39,3 +39,4 @@ When a SealedSecret custom resource is deployed to the Kubernetes cluster, the c
 
 The companion CLI tool kubeseal is used for creating a SealedSecret custom resource definition (CRD) from a Secret resource definition using the public key. kubeseal can communicate with the controller through the Kubernetes API server and retrieve the public key needed for encrypting a Secret at runtime. The public key may also be downloaded from the controller and saved locally to be used offline.
 
+![architect](gitops.png "gitops")
