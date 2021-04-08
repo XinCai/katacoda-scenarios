@@ -1,4 +1,5 @@
-# Sealing Kubernetes Secret
+#Sealing Kubernetes Secret
+
 
 ## create a Kubernetes secret 
 ```
@@ -11,6 +12,17 @@ kubernetes generated `mysecret.yaml`
 
 ```
 cat mysecret.yaml
+```
+it is like:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+  namespace: default
+data:
+  foo: bar  # <- base64 encoded "bar"
 ```
 
 ## seal secret with kubeseal 
@@ -25,7 +37,21 @@ suppose your controller name `sealed-secrets-controller`
 cat mysecret.yaml | kubeseal --controller-namespace kube-system --controller-name sealed-secrets-controller --format yaml > sealed-mysecret.yaml  
 ```
 
-deploy sealed secret in cluster
+### deploy sealed secret in cluster
 ```
 kubectl apply -f sealed-mysecret.yaml
+```
+
+### verify sealed secret deployment in cluster
+
+```
+kubectl get secret | grep -i mysecret
+```
+
+you should be able to see a secret in the default namespace
+
+you can also describe command to verify
+
+```
+kubectl describe secret mysecret -o yaml
 ```

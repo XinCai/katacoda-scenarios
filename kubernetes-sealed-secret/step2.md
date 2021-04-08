@@ -1,9 +1,10 @@
 # Installing the custom controller and CRD for SealedSecret
 
-See the Git repository for Sealed Secrets project for recent releases and detailed installation instructions. 
+### Second part:
+2. Install A cluster-side controller / operator
 
-The latest release at the time of writing this post was v0.15.0 and can be installed on a Kubernetes cluster in a single step using kubectl as shown by the following command. 
-
+The latest release at the time of writing this post was v0.15.0 and can be installed on a Kubernetes cluster in a single step using kubectl as shown by the following command.
+ 
 ### install the controller
 
 ```

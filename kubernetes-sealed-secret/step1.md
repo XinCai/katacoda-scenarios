@@ -1,5 +1,14 @@
 # Installing the kubeseal client
 
+Sealed Secrets is composed of two parts:
+
+1. A client-side utility: `kubeseal`
+2. A cluster-side controller / operator
+
+
+### First Part 
+let's install client side tool first `kubeseal`
+
 For Linux x86_64 systems, the client-tool may be installed into /usr/local/bin with the following command:
 
 ```
